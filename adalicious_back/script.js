@@ -1,8 +1,11 @@
 import data from "./data.json" with { type: "json" };
+import 'dotenv/config'
 import express from "express";
+import { neon } from '@neondatabase/serverless';
 import cors from "cors";
 
-console.log("je suis le json");
+
+const sql = neon(process.env.DATABASE_URL);
 const app = express();
 const port = 3000
 app.use(express.json());
@@ -37,3 +40,23 @@ app.post("/orders", (req, res) => {
 app.listen(3000, () => {
     console.log(`Serveur lancé sur http://localhost:3000`);
 });
+async function main() {
+  await sql`
+  CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(100) UNIQUE
+  )
+`
+
+await sql`
+  INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com')
+`
+
+
+  const result = await sql`SELECT version()`
+  console.log(result[0])
+}
+
+
+main().catch(console.error)
