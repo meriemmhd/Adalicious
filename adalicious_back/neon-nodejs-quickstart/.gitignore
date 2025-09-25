@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+
+# Environnement (fichiers sensibles)
+.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build / distribution folders
+dist/
+build/
+out/
+
+# Frontend specific
+*.cache
+.next/
+.vite/
+.idea/
+.vscode/
+
+# Optional: backups / temp
+*.swp
+*.tmp
+*.bak
