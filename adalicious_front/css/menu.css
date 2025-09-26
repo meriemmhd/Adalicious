@@ -1,0 +1,117 @@
+/* --- Mise en page globale et conteneur de l'application --- */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le conteneur du menu horizontalement */
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 0;
+    background-color: white; 
+}
+
+/* Le conteneur principal du menu (pour le cadre et l'ombre) */
+/* CIBLE: L'élément qui entoure tout le contenu du menu (ajoutez-le dans votre HTML !) */
+#menu-container {
+    width: 350px; 
+    background-color: white;
+    border: 3px solid black; 
+    border-radius: 10px;
+    padding: 20px; 
+    box-shadow: 5px 5px 0px 0px black; /* Effet 3D du mockup */
+    text-align: center;
+}
+
+/* --- Style du Header du Menu (Adalicious Bonjour {prenom}) --- */
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+#client_name {
+    font-style: italic;
+    color: #666;
+    display: block; 
+    font-size: 0.9em;
+    margin-bottom: 25px;
+}
+
+/* Retire les puces de la liste (si vous utilisez <ul>) */
+#menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Style pour un élément de menu (Chaque Carte de Plat) --- */
+/* CIBLE: .menu-item (Chaque article de la liste) */
+.menu-item {
+    display: flex;
+    align-items: flex-start; /* Aligner les éléments en haut de la carte */
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px; /* Espace entre les cartes */
+    box-shadow: 4px 4px 0px 0px black; 
+    text-align: left;
+    position: relative; /* Pour positionner le bouton "commander" */
+}
+
+/* --- Icône/Emoji de l'aliment --- */
+/* CIBLE: .item-icon */
+.item-icon {
+    font-size: 32px; 
+    margin-right: 15px;
+    border: 2px solid black; /* Petit encadré noir autour de l'icône */
+    border-radius: 5px;
+    padding: 5px;
+    line-height: 1; 
+    text-align: center;
+}
+
+/* --- Détails et Description du Plat --- */
+.item-details {
+    flex-grow: 1;
+    padding-right: 110px; /* Crée de l'espace pour le bouton à droite */
+}
+
+/* CIBLE: .item-name */
+.item-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0 3px 0;
+}
+
+/* CIBLE: .item-desc */
+.item-desc {
+    font-size: 0.9em;
+    color: #333;
+    margin: 0;
+}
+
+/* --- Style du Bouton "Commander" --- */
+/* CIBLE: .commander-button */
+.commander-button {
+    /* Positionnement du bouton en bas à droite de la carte */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    
+    background-color: #add8e6; /* Bleu clair */
+    color: black;
+    padding: 6px 15px;
+    border: 2px solid black; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap; /* Empêche le texte de se séparer */
+}
+
+.commander-button:hover {
+    background-color: #a0c3d9;
+}

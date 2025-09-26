@@ -4,18 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Acceuil</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
     <img src="photo.png" alt="Adalicious">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/index.css" />
    
     <h1>Bienvenue dans notre restaurant</h1>
     <form action="menu.html" method="GET">
         <label for="name">Entrez votre prénom :</label>
         <input type="text" id="name" name="name" placeholder="Ex: Zoé...">
         <button type="submit">Voir les menus</button>
+    </form>
+    <form action="suivi.html " method ="GET">
+         <input type="hidden" id="clientName" name="name">
+         <button type="submit"> Suivre ma commande</button>
+
     </form>
 </body>
 

@@ -1,0 +1,93 @@
+/* --- Mise en page globale et conteneur de l'application --- */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre l'écran horizontalement */
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 0;
+    background-color: white; 
+}
+
+/* Le conteneur principal (le cadre noir de l'application) */
+#main-container {
+    width: 350px; 
+    background-color: white;
+    border: 3px solid black; 
+    border-radius: 10px;
+    padding: 20px 30px; 
+    box-shadow: 5px 5px 0px 0px black; 
+    text-align: center;
+}
+
+/* --- Header (Adalicious / Merci pour ta commande) --- */
+header h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.thank-you-message {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 25px;
+}
+
+/* Titre "Suivi :" */
+h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: left; /* Aligné à gauche dans le mockup */
+    width: 100%; /* S'étale sur toute la largeur */
+    margin: 0 0 15px 0;
+    padding-left: 10px; /* Petit décalage pour l'alignement visuel */
+    box-sizing: border-box;
+}
+
+/* --- Le Bloc de Suivi Principal ("En préparation") --- */
+.tracking-box {
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Légèrement grisé */
+    text-align: center;
+    position: relative; /* Pour positionner l'indicateur */
+    margin-bottom: 20px;
+}
+
+/* L'indicateur de statut "En préparation" */
+.status-indicator {
+    background-color: #e8f5e9; /* Vert très clair */
+    color: #388e3c; /* Vert foncé */
+    border: 2px solid #388e3c; /* Bordure verte */
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 0.9em;
+    
+    /* Positionnement exact comme sur le mockup (en haut à gauche du bloc) */
+    position: absolute;
+    top: -15px; /* Déplacer au-dessus du cadre */
+    left: 15px;
+}
+
+/* Visuel du produit (image/icône) */
+.item-visual {
+    margin: 20px 0 10px 0;
+    padding: 10px;
+}
+
+.order-icon {
+    /* Si c'est une image comme la barre de chocolat, ajustez sa taille */
+    width: 60px; 
+    height: auto;
+}
+
+/* Nom du produit */
+.item-name {
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 10px;
+}

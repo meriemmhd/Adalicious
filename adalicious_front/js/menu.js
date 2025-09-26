@@ -8,25 +8,25 @@ console.log(name);
 client_name.textContent = `Bonjour ${name} ! `
 
 
-async function commanderPlat(plat) {
-    try {
-        const resp = await fetch("http://localhost:3000/orders", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                id: plat.id,
-                plate: plat.plate,
-                clientName: name,
-            }),
-        });
-        const data = await resp.json();
-        if (!data.ok) throw new Error(data.error);
-        alert(`✅ ${data.message}`);
-    }
-    catch (e) {
-        alert("❌ Impossible d'envoyer la commande.");
-        console.error(e);
-    }
+async function commander(plate, clientName) {
+  try {
+    const res = await fetch("http://localhost:3000/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        plate: plate,
+        clientName: clientName
+      })
+    });
+
+    if (!res.ok) throw new Error("Erreur serveur");
+    const data = await res.json();
+   alert(`✅ Commande envoyée : ${data.order.plate}`);
+
+  } catch (err) {
+    alert("❌ Impossible d'envoyer la commande.");
+    console.error(err);
+  }
 }
 
 async function fetchMenus() {
@@ -49,11 +49,13 @@ async function fetchMenus() {
             li.appendChild(desc);
             const btn = document.createElement("button");
             btn.textContent = "Commander";
-            btn.addEventListener("click", () => commanderPlat(plat));
+            btn.addEventListener("click", () => commander(plat.plate, name));
+
             li.appendChild(btn);
             ul.appendChild(li);
 
         });
+       
     }
     catch (err) {
         console.error("Erreur :", err);
