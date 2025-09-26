@@ -17,11 +17,11 @@
         <input type="text" id="name" name="name" placeholder="Ex: Zoé...">
         <button type="submit">Voir les menus</button>
     </form>
-    <form action="suivi.html " method ="GET">
-         <input type="hidden" id="clientName" name="name">
-         <button type="submit"> Suivre ma commande</button>
-
+     <form action="commande.html" method="GET" onsubmit="return syncName();">
+        <input type="hidden" id="clientName" name="name">
+        <button type="submit">Suivre ma commande</button>
     </form>
+
 </body>
 
 </html>
